@@ -47,30 +47,38 @@ s = \sum_{i=0}^{W-1} x_i
 
 <!-- Package usage documentation. -->
 
-<section class="installation">
 
-## Installation
-
-```bash
-npm install @stdlib/stats-iter-msum
-```
-
-Alternatively,
-
--   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
--   If you are using Deno, visit the [`deno` branch][deno-url].
--   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
-
-The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
-
-</section>
 
 <section class="usage">
 
 ## Usage
 
+To use in Observable,
+
 ```javascript
-var itermsum = require( '@stdlib/stats-iter-msum' );
+itermsum = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-iter-msum@umd/browser.js' )
+```
+
+To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
+
+```javascript
+var itermsum = require( 'path/to/vendor/umd/stats-iter-msum/index.js' )
+```
+
+To include the bundle in a webpage,
+
+```html
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-iter-msum@umd/browser.js"></script>
+```
+
+If no recognized module system is present, access bundle contents via the global scope:
+
+```html
+<script type="text/javascript">
+(function () {
+    window.itermsum;
+})();
+</script>
 ```
 
 #### itermsum( iterator, W )
@@ -126,9 +134,14 @@ s = it.next().value; // [3.0, -7.0, -5.0]
 
 <!-- eslint no-undef: "error" -->
 
-```javascript
-var runif = require( '@stdlib/random-iter-uniform' );
-var itermsum = require( '@stdlib/stats-iter-msum' );
+```html
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-iter-uniform@umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/stats-iter-msum@umd/browser.js"></script>
+<script type="text/javascript">
+(function () {
 
 // Create an iterator for generating uniformly distributed pseudorandom numbers:
 var rand = runif( -10.0, 10.0, {
@@ -150,6 +163,11 @@ while ( true ) {
         console.log( 'sum: %d', v.value );
     }
 }
+
+})();
+</script>
+</body>
+</html>
 ```
 
 </section>
@@ -252,9 +270,9 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 <!-- <related-links> -->
 
-[@stdlib/stats/iter/mmean]: https://github.com/stdlib-js/stats-iter-mmean
+[@stdlib/stats/iter/mmean]: https://github.com/stdlib-js/stats-iter-mmean/tree/umd
 
-[@stdlib/stats/iter/sum]: https://github.com/stdlib-js/stats-iter-sum
+[@stdlib/stats/iter/sum]: https://github.com/stdlib-js/stats-iter-sum/tree/umd
 
 <!-- </related-links> -->
 
