@@ -65,6 +65,11 @@ s = \sum_{i=0}^{W-1} x_i
 ## Usage
 
 ```javascript
+import itermsum from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-iter-msum@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/stats-iter-msum/tags). For example,
+
+```javascript
 import itermsum from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-iter-msum@v0.1.0-deno/mod.js';
 ```
 
@@ -123,7 +128,7 @@ s = it.next().value; // [3.0, -7.0, -5.0]
 
 ```javascript
 import runif from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-iter-uniform@deno/mod.js';
-import itermsum from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-iter-msum@v0.1.0-deno/mod.js';
+import itermsum from 'https://cdn.jsdelivr.net/gh/stdlib-js/stats-iter-msum@deno/mod.js';
 
 // Create an iterator for generating uniformly distributed pseudorandom numbers:
 var rand = runif( -10.0, 10.0, {
